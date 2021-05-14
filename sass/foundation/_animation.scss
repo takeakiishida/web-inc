@@ -1,0 +1,292 @@
+// スクロールグレス
+.scrollgress {
+    z-index: 99999;
+}
+
+// ローディング画面
+#starting {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: $color-main;
+	z-index: 9999999;
+	
+	// ロゴ画像
+	&__logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 200px;
+	}
+
+	//画面遷移アニメーション
+	&__bgAnime{
+		display: none;
+	}
+}
+
+//　ページをめくるアニメーション
+body.appear #starting__bgAnime{
+	display:block;
+	animation-name:PageAnimation;
+	animation-duration:2.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+	content: "";
+	position:fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	transform: translateX(-200%) skewX(-45deg);
+	background-color: $color-base;
+}
+@keyframes PageAnimation{
+	0% {
+		transform-origin:left;
+		transform:translateX(-200%) skewX(-45deg);
+	}
+	100% {
+		transform-origin:left;
+		transform:translateX(400%) skewX(-45deg);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#wrapper{
+	opacity: 0;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #wrapper{
+	animation-name:wrapperAppear;
+	animation-duration:1s;
+	animation-delay: 1.2s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+@keyframes wrapperAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+	}
+}
+
+//背景アニメメーションの全体について。非表示→表示
+.bgextend{
+	animation-name:bgextendAnimeBase;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+	position: relative;
+	overflow: hidden;
+	opacity:0;
+}
+@keyframes bgextendAnimeBase{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+//背景画像の非表示→表示アニメーション
+.bgappear{
+	animation-name:bgextendAnimeSecond;
+	animation-duration:1s;
+	animation-delay: 0.6s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+@keyframes bgextendAnimeSecond{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+//背景色を右→左へ伸ばすアニメーション
+.MaskRL::before{
+	animation-name:MaskRL-Anime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	background-color: rgba(40, 69, 102, 0.6);
+}
+@keyframes MaskRL-Anime{
+	0% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:right;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:left;
+	}
+	100% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+}
+
+//背景色が左→右へ伸ばすアニメーション
+.MaskLR::before{
+	animation-name:MaskLR-Anime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $color-base;
+}
+@keyframes MaskLR-Anime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+// 各トリガー初期状態
+.eleAppear-Trigger,
+.MaskRL-Trigger,
+.MaskLR-Trigger{
+    opacity: 0;
+}
+
+// テキストエリアを右から左に表示するアニメーション
+.Txtappear{
+	transform: scaleX(0);
+	animation-name: TxtRLextendAnime;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	// animation-delay: 0.9s;
+}
+@keyframes TxtRLextendAnime {
+	0% {
+		opacity: 0;
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+	100% {
+		opacity: 1;
+		transform-origin:right;
+		transform:scaleX(1);
+	}
+}
+
+
+// ふわっと表示するアニメーション
+.flipLeft{
+	animation-name: flipLeftAnime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+	perspective-origin: left center;
+	opacity:0;
+}
+@keyframes flipLeftAnime{
+	0% {
+		transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
+		opacity: 0;
+	}
+
+	100% {
+		transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
+		opacity: 1;
+	}
+}
+
+//　アニメーションの遅延時間
+.delay-time03{
+	animation-delay: 0.3s;
+}
+.delay-time06{
+	animation-delay: 0.6s;
+}
+.delay-time09{
+	animation-delay: 0.9s;
+}
+.delay-time12{
+	animation-delay: 1.2s;
+}
+
+// ページトップへ戻る
+#page-top {
+	display: none;
+	position: fixed;
+	right: 30px;
+	bottom: 31px;
+	a {
+		display: flex;
+		justify-content:center;
+		align-items:center;
+		background: $color-key;
+		border-radius: 5px;
+		width: 60px;
+		height: 60px;
+		color: #fff;
+		font-size:0.6rem;
+		z-index: 99999;
+
+		&:hover {
+			background: #777;
+		}
+	}
+}
+
+// ハンバーガーメニュー
+// クリック後にバツ印にする
+.l-header-hamburger .is-activeMenu {
+	&:nth-of-type(1) {
+		top: 18px;
+		left: 18px;
+		transform: translateY(6px) rotate(-45deg) ;
+	}
+	&:nth-of-type(2) {
+		opacity: 0;
+	}
+	&:nth-of-type(3) {
+		top: 30px;
+		left: 18px;
+		transform: translateY(-6px) rotate(45deg);
+	}
+}
+
+// 表示するメニューに高さを出す
+.is-heightChange {
+	width: 100%;
+	height: calc(100vh - #{$header-height-sm});
+	position: fixed;
+	top: $header-height-sm;
+	left: 0;
+	background-color: $color-main;
+	overflow: scroll;
+	z-index: 99999;
+
+	@include mq("md") {
+		height: calc(100vh - #{$header-height-md});
+	}
+}

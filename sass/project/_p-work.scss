@@ -1,0 +1,111 @@
+// スライダーの左右の矢印を消す
+.swiper-button-next::after, .swiper-button-prev::after {
+    content: none !important;
+}
+// ページネーションの設定
+.swiper-pagination {
+    margin-top: 7px;
+    width: 100%;
+    span {
+        width: 6px;
+        height: 6px;
+        margin: 0 6px;
+    }
+}
+.p-work {
+    background-color: #D2D7D9;
+    padding: 70px 0;
+
+    &-titleWrapper {
+        margin-top: 15px;
+        margin-bottom: 35px;
+    }
+
+    &-content {
+        // @include mq("sm") {
+        //     display: flex;
+        //     justify-content: space-between;
+        //     width: 90%;
+        //     margin: 0 auto;
+        // }
+        @include mq("lg") {
+            // width: 35%;
+        }
+
+        &__image {
+            @include mq("sm") {
+                width: 100%;
+            }
+        }
+
+        &__desc {
+            background-color: #17557E;
+            color: #fff;
+            padding: 5%;
+            @include mq("sm") {
+                width: 100%;
+            }
+        }
+
+        &__inner {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            height: 15vh;
+        }
+
+        &__titleArea {
+            &--type {
+                @include mq("sm") {
+                    font-size: 0.8vw;
+                }
+            }
+            &--title {
+                @include mq("sm") {
+                    font-size: 1.4vw;
+                }
+            }
+        }
+
+        &__list {
+            list-style-type: circle;
+            @include mq("sm") {
+                font-size: 0.6vw;
+            }
+        }
+
+        &__address{
+            font-size: 10px;
+            text-align: center;
+            padding: 10px;
+            border: solid 1px $color-txt-white;
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+    &__client {
+        padding: 20px;
+        display: none;
+
+        p{
+            text-align: center;
+        }
+
+        &-lists {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        &-item {
+            box-shadow: black;
+            width: 30%;
+        }
+    }
+    &__btn {
+        margin-top: 60px;
+        margin-bottom: 15px;
+    }
+}

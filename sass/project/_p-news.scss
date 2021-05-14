@@ -1,0 +1,52 @@
+.p-news {
+    padding: 70px 0;
+
+    &-wrapper {
+        width: 90%;
+        margin: 30px auto 0;
+        @include mq("md") {
+            width: 60%;
+        }
+    }
+
+
+    &-article {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-top: 1px solid $color-base;
+        padding: 17px;
+        &:last-child {
+            border-bottom: 1px solid $color-base;
+        }
+        &__date {
+            width: 15%;
+            text-align: left;
+            @include mq("sm") {
+                width: 10%;
+                text-align: center;
+            }
+        }
+        &__category {
+            width: 70%;
+            text-align: left;
+            @include mq("sm") {
+                width: 10%;
+                text-align: center;
+            }
+        }
+        &__txt {
+            width: 100%;
+            @include mq("sm") {
+                width: 75%;
+            }
+        }
+        a {
+            color: #000;
+        }
+    }
+    &-btn {
+        margin-top: 60px;
+        margin-bottom: 15px;
+    }
+}

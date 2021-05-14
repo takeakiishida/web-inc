@@ -1,0 +1,79 @@
+.p-contact {
+    padding: 70px 0;
+    background-image: url("../img/contact.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-titleWrapper {
+        margin-bottom: 40px;
+    }
+    &-contentWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &-telBox {
+        width: 100%;
+        border: none;
+        padding-right: 0;
+        text-align: center;
+        @include mq("md") {
+            text-align: right;
+            width: 50%;
+            border-right: 2px solid $color-base;
+            padding-right: 6%;
+        }
+        @include mq("lg") {
+            width: 35%;
+        }
+        &__tel {
+            font-size: 14px;
+            a {
+                color: #000;
+            }
+        }
+        &__num {
+            font-size: 40px;
+        }
+        &__hour {
+            font-size: 15px;
+        }
+    }
+
+    &-form {
+        width: 80%;
+        margin: 0 auto;
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+        @include mq("md") {
+            width: 50%;
+            padding-left: 6%;
+            margin: 0;
+        }
+        @include mq("lg") {
+            width: 35%;
+        }
+        &__area {
+            width: 100%;
+        }
+        &__btn {
+            background-color: $color-key;
+            display: block;
+            width: 65%;
+            margin: 0 auto;
+            padding: 4%;
+            text-align: center;
+            @include mq("md") {
+                margin: 0;
+            }
+        }
+        &__txt {
+            color: $color-txt-white;
+        }
+    }
+
+}

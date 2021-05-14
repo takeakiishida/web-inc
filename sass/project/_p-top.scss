@@ -1,0 +1,131 @@
+.js-type {
+    opacity: 0;
+    }
+.js-type span {
+    opacity: 0;
+}
+
+.p-top {
+    position: relative;
+    background-color: $color-main;
+    color: $color-txt-white;
+    padding-top: $header-height-sm;
+
+    @include mq("md") {
+        height: 52vw;
+    }
+
+    &__txtArea {
+        opacity: 0; //after
+
+        position: relative;
+        z-index: 999;
+        width: 100%;
+        background-color: $color-base;
+
+        @include mq("md") {
+            margin-left: 10vw;
+            margin-top: 10vw;
+            width: 36vw;
+            height: 21vw;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 25px;
+        padding: 20px 25px 0;
+
+        @include mq("md") {
+            text-align: left;
+            font-size: 2.5vw;
+            padding: 5% 10% 0;
+        }
+        @include mq("lg") {
+            font-size: 2.7vw;
+
+        }
+    }
+    &__txt {
+        font-size: 16px;
+        padding: 20px 25px;
+        text-align: center;
+        @include mq("md") {
+            text-align: left;
+            font-size: 1.2vw;
+            padding: 5% 10% 0;
+        }
+        @include mq("lg") {
+            font-size: 1.3vw;
+        }
+    }
+
+    &__imageArea {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        @include mq("md") {
+            position: absolute;
+            height: calc(52vw - #{$header-height-md});
+            width: 75%;
+            right: 0;
+            top: $header-height-md;
+        }
+    }
+
+    &__bgimage {
+        height: 60vh;
+        @include mq("md") {
+            height: calc(52vw - #{$header-height-md});
+            background-position: center right;
+        }
+    }
+
+    &__scroll {
+        position:absolute;
+        left:10%;
+        bottom: 20%;
+
+        span {
+            position: absolute;
+            left:-15px;
+            top: -15px;
+            color: #fff;
+        }
+        span::after {
+            content: "";
+            display: block;
+            width: 2px;
+            margin: 0 auto;
+            background: #fff;
+            animation: pathmove 1.4s ease-in-out infinite;
+            opacity:0;
+        }
+        @keyframes pathmove{
+            0%{
+                height:0;
+                top:0;
+                opacity: 0;
+            }
+            30%{
+                height:50px;
+                opacity: 1;
+            }
+            100%{
+                height:0;
+                top:120px;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+// aboutエリアのメッセージ固定について
+.is-fixed {
+    @include mq("md") {
+        position: fixed;
+    }
+}
+.is-release {
+    position: absolute;
+}

@@ -1,0 +1,38 @@
+.p-about {
+    color: #000;
+    padding: 80px 0;
+    background-image: url("../img/sora_m.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include mq("lg") {
+        padding: 80px 0 120px;
+    }
+
+    &-wrapper {
+        @include mq("md") {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &-inner {
+        @include mq("md") {
+            width: 50%;
+        }
+    }
+
+    &__company-info {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    &__txt{
+        padding: 30px 20px 70px;
+        @include mq("md"){
+            padding: 30px 40px 30px;
+            // height: 50vh;
+        }
+    }
+}

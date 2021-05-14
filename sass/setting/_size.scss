@@ -1,0 +1,19 @@
+// レイアウト幅
+$layout-width-sm: 640px;
+$layout-width-md: 768px;
+$layout-width-lg: 1024px;
+$layout-width-xl: 1280px;
+$layout-width-xxl: 1400px;
+
+// ブレークポイント
+$breakpoints: (
+    "sm":"screen and (min-width:#{$layout-width-sm})",
+    "md":"screen and (min-width:#{$layout-width-md})",
+    "lg":"screen and (min-width:#{$layout-width-lg})",
+    "xl":"screen and (min-width:#{$layout-width-xl})",
+    "xxl":"screen and (min-width:#{$layout-width-xxl})",
+);
+
+//ヘッダーの高さ
+$header-height-sm: 55px;
+$header-height-md: 80px;

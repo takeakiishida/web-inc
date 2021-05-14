@@ -1,0 +1,64 @@
+.p-recruit {
+    padding: 70px 0;
+    background-color: #D2D7D9;
+    // background-position: center top;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+
+    &-wrapper {
+        @include mq("md") {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &-pcLeft {
+        width: 100%;
+        @include mq("md") {
+            width: 50%;
+        }
+    }
+    &-pcRight {
+        width: 100%;
+        @include mq("md") {
+            width: 45%;
+            margin-top: 50px;
+        }
+        &>p {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            @include mq("md") {
+                margin-top: 0;
+                text-align: left;
+            }
+        }
+    }
+    &-imgArea {
+        margin-top: 25px;
+    }
+    &-jobs {
+        width: 90%;
+        margin: 0 auto;
+        @include mq("md") {
+            width: 100%;
+        }
+        &__detail {
+            border-left: 5px solid $color-base;
+            margin-bottom: 30px;
+            padding: 2% 0 2% 2%;
+            p:nth-of-type(1) {
+                font-weight: bold;
+            }
+            p:nth-of-type(2) {
+                font-size: 0.8rem;
+            }
+            @include mq("md") {
+                padding: 2% 5% 2% 2%;
+            }
+        }
+    }
+    &-btn {
+        margin-top: 60px;
+        margin-bottom: 15px;
+    }
+}

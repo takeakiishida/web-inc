@@ -1,0 +1,15 @@
+.c-btn {
+    font-size: 1rem;
+    display: block;
+    margin: 0 auto;
+    height: 58px;
+    line-height: 58px;
+    text-align: center;
+    background-color: #06131B;
+    color: #fff;
+    border: thin solid #1B1B1B;
+    width: 230px;
+    @include mq("md") {
+        width: 20vw;
+    }
+}

@@ -1,0 +1,30 @@
+.c-section__title {
+    font-size: 2.0rem;
+    text-align: center;
+    color: #17557E;
+
+    &::after {
+        content: "";
+        display: block;
+        vertical-align: middle;
+        background-color: #17557E;
+        height: 3px;
+        width: 70px;
+        margin: 0 auto 15px;
+    }
+
+    &--gray {
+        color: #AD9D8F;
+        &::after {
+            background-color: #AD9D8F;
+        }
+    }
+}
+
+.c-section__txt {
+    text-align: center;
+
+    &--white{
+        color: #fff;
+    }
+}

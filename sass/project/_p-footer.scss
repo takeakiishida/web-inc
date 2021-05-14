@@ -1,0 +1,92 @@
+.p-footer {
+    background-color: $color-main;
+    padding: 70px 7vw;
+    color: $color-txt-white;
+    text-align: center;
+    @include mq("md") {
+        text-align: left;
+    }
+    &--flex {
+        @include mq("md") {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &-left {
+        @include mq("md") {
+            width: 40%;
+        }
+    }
+    &-logo {
+        width: 50%;
+        margin: 0 auto;
+        @include mq("md") {
+            margin: 0;
+        }
+    }
+    &-companyName {
+        margin: 25px 0;
+    }
+    &-address {
+
+    }
+    &-right {
+        @include mq("md") {
+            width: 60%;
+        }
+    }
+    &-nav {
+        margin-top: 30px;
+        @include mq("md") {
+            margin-top: 0;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+        &__item {
+            border-top: 1px solid #fff;
+            padding: 8px;
+            @include mq("md") {
+                margin-left: 25px;
+                border-top: none;
+                padding: 0;
+            }
+            &:last-child{
+                border-bottom: 1px solid #fff;
+                @include mq("md") {
+                    border-bottom: none;
+                }
+            }
+            a {
+                color: $color-txt-white;
+            }
+        }
+    }
+    &-sns {
+        display: flex;
+        justify-content: center;
+        @include mq("md") {
+            justify-content: flex-end;
+        }
+        margin-top: 25px;
+        li {
+            width: 9%;
+            margin: 0 15px;
+            @include mq("md") {
+                width: 5%;
+                margin-left: 30px;
+                margin-right: 0;
+            }
+        }
+    }
+    &-copyright {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.7rem;
+        @include mq("md") {
+            text-align: right;
+            margin-top: 0;
+        }
+    }
+}

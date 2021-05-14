@@ -1,0 +1,140 @@
+.p-price {
+  padding: 70px 0;
+  color: #000;
+
+  &__txt {
+    text-align: left;
+  }
+
+  &-titleWrapper {
+    width: 85%;
+    margin: 0 auto 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-titleInner{
+    width: 25%;
+    text-align: center;
+  }
+
+  &-txtInner {
+    width: 70%;
+    margin-top: 80px;
+  }
+
+  &-selectWrapper {
+    width: 85%;
+    margin: 28px auto;
+  }
+
+  &-selectItems {
+    display: block;
+    @include mq("md") {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &-selectItem {
+    text-align: center;
+    border: 1px solid #17557E;
+    width: 100%;
+    margin-bottom: 4px;
+
+    @include mq("md") {
+      width: 19%;
+    }
+    a {
+      padding: 10px 20px;
+      display: block;
+      color: #17557E;
+      font-size: 0.9rem;
+    }
+  }
+
+  &-tabWrapper {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  &-tabItem {
+    display: none;
+    font-size: 0.8rem;
+
+      &__image {
+        width: 100%;
+        @include mq("md") {
+          width: 48%;
+        }
+      }
+
+      &__table {
+        width: 100%;
+        // height: 400px;
+        margin-top: 10px;
+        border-collapse: collapse;
+        @include mq("md") {
+          width: 48%;
+          margin-top: 0;
+        }
+        tbody {
+          // height: 100%;
+        }
+        tr{
+          border-bottom: solid 5px white;
+          // height: 16.66%;
+        }
+        tr:last-child{
+          border-bottom: none;
+        }
+        th{
+          // height: 100%;
+          position: relative;
+          text-align: left;
+          width: 30%;
+          background-color: #17557E;
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+        }
+        th:after{
+          display: block;
+          content: "";
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          top:calc(50% - 10px);
+          right:-10px;
+          border-left: 10px solid #17557E;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+        }
+        td{
+          height: 100%;
+          width: 70%;
+          text-align: center;
+          background-color: #eee;
+          padding: 10px 0;
+        }
+      }
+  }
+}
+
+.is-active {
+  display: block;
+
+  &--color {
+    background-color: #17557E;
+    color: #fff !important;
+    border: none;
+  }
+}
+
+.is-flex {
+  display: block;
+  @include mq("md") {
+    display: flex;
+    justify-content: space-between;
+  }
+}

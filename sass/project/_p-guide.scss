@@ -1,0 +1,129 @@
+.p-guide {
+    text-align: center;
+    background-color: #D2D7D9;
+    padding: 70px 0;
+    // clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+
+    &-titleWrapper {
+        margin-bottom: 35px;
+    }
+
+    &__flow {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include mq("lg") {
+            width:85%;
+            margin: 20px auto 35px;
+        }
+    }
+
+    &-item {
+        width: 45%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        @include mq("sm") {
+            width: 20%;
+            margin-bottom: 0;
+        }
+    }
+
+    &-circleArea {
+        width: 30%;
+        color: #17557E;
+        display: flex;
+        justify-content: flex-end;
+
+        &__circle {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            border: 1px solid #17557E;
+        }
+
+        p {
+            line-height: 40px;
+        }
+    }
+
+    &-content {
+        width: 70%;
+        margin-top: 35px;
+
+        img {
+            width: 70%;
+        }
+        p {
+            display: inline-block;
+            margin-top: 10px;
+            border-bottom: 1px solid #17557E;
+            padding-bottom: 3px;
+        }
+    }
+    &__accArea {
+        list-style: none;
+        width: 96%;
+        max-width: 900px;
+        margin:0 auto;
+
+        li {
+            margin: 25px 0;
+        }
+        section {
+            border: 1px solid $color-base;
+        }
+        /*アコーディオンタイトル*/
+        .title {
+            position: relative;/*+マークの位置基準とするためrelative指定*/
+            cursor: pointer;
+            font-size:1rem;
+            font-weight: normal;
+            text-align: left;
+            padding: 1% 1% 1% 50px;
+            transition: all .5s ease;
+        }
+        /*アイコンの＋と×*/
+        .title::before,
+        .title::after{
+            position: absolute;
+            content:'';
+            width: 15px;
+            height: 2px;
+            background-color: $color-base;
+        }
+        .title::before{
+            top:48%;
+            left: 15px;
+            transform: rotate(0deg);
+        }
+        .title::after{    
+            top:48%;
+            left: 15px;
+            transform: rotate(90deg);
+        }
+        /*　closeというクラスがついたら形状変化　*/
+        .title.close::before{
+            transform: rotate(45deg);
+        }
+        .title.close::after{
+            transform: rotate(-45deg);
+        }
+        /*アコーディオンで現れるエリア*/
+        .box {
+            text-align: left;
+            display: none;/*はじめは非表示*/
+            background: #f3f3f3;
+            margin:0 3% 3% 3%;
+            padding: 3%;
+        }
+    }
+    &__btn {
+        margin-top: 60px !important;
+        margin-bottom: 15px;
+    }
+}

@@ -1,0 +1,23 @@
+.p-header {
+    background-color: $color-main;
+    color: $color-txt-white;
+    font-size: 14px;
+    width: 100%;
+
+    &__logo {
+        width: 100px;
+        @include mq("xl") {
+            width: 170px;
+        }
+    }
+
+    &__tit{
+        color: $color-txt-white;
+        font-size: 25px;
+
+        a {
+            color: #fff;
+        }
+    }
+}
+

@@ -1,0 +1,37 @@
+a {
+    text-decoration: none;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 77%;
+    color: #000;
+
+    @media (min-width:520px) {
+        font-size: 87.5%;
+    }
+    @media (min-width:980px) {
+        font-size: 100%;
+    }
+}
+
+body {
+    line-height: 1.9;
+    letter-spacing: 1.2;
+    // font-family: YuMincho,    /* Mac用 */
+	// 'Yu Mincho', /* Windows用 */
+	// serif;;
+    font-family: 'Noto Serif JP', serif;
+    // font-family: 'Open Sans', sans-serif;
+}
